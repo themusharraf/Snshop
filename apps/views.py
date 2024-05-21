@@ -1,4 +1,13 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
+from .models import Users
+from .forms import SignupForm
+
+
+class RegisterView(CreateView):
+    model = Users
+    success_url = '/'
+    form_class = SignupForm
+    template_name = 'register.html'
 
 
 class HomeView(TemplateView):
@@ -19,6 +28,3 @@ class ProductView(TemplateView):
 
 class LoginView(TemplateView):
     template_name = 'login.html'
-
-class RegisterView(TemplateView):
-    template_name = 'register.html'
