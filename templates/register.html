@@ -55,7 +55,34 @@
         <h1 class="mb-6 text-center text-3xl font-bold text-secondary">Register</h1>
         <form method="post" action="{% url 'register' %}">
             {% csrf_token %}
-            {{ form.as_p }}
+            <div class="mb-4">
+                <label class="mb-2 block font-bold text-gray-700" for="username">
+                    username
+                </label>
+                <input class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+                       id="username" name="username" placeholder="Enter your username" type="text"/>
+            </div>
+            <div class="mb-4">
+                <label class="mb-2 block font-bold text-gray-700" for="email">
+                    Email
+                </label>
+                <input class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+                       id="email" name="email" placeholder="Enter your email" type="email"/>
+            </div>
+            <div class="mb-6">
+                <label class="mb-2 block font-bold text-gray-700" for="password1">
+                    Password
+                </label>
+                <input class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+                       id="password1" name="password1" placeholder="Enter your password" type="password"/>
+            </div>
+            <div class="mb-6">
+                <label class="mb-2 block font-bold text-gray-700" for="password2">
+                    Password
+                </label>
+                <input class="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+                       id="password2" name="password2" placeholder="Enter your reply password" type="password"/>
+            </div>
             <div class="flex items-center justify-between">
                 <button class="focus:shadow-outline rounded bg-secondary py-2 px-4 font-bold text-blue hover:bg-accent focus:outline-none"
                         type="submit">
